@@ -1,0 +1,52 @@
+--Postfix Gmail SMTP Setup on Ubuntu/Debian:
+
+# Update and install required packages
+sudo apt update -y
+sudo apt install postfix -y
+sudo apt install mailutils -y
+
+# Enable and start postfix
+sudo systemctl enable postfix
+sudo systemctl start postfix
+
+
+--Config Changes:
+#Edit Postfix main config:
+sudo nano /etc/postfix/main.cf
+
+#Basic settings:
+relayhost = [smtp.gmail.com]:587
+smtp_sasl_auth_enable = yes
+smtp_sasl_security_options = noanonymous
+smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd
+smtp_tls_security_level = encrypt
+smtp_tls_CAfile = /etc/ssl/certs/ca-certificates.crt
+inet_protocols = ipv4
+
+Note: Make sure there is only one definition for each setting.
+
+--For User Creation and setup:
+sudo nano /etc/postfix/sasl_passwd
+
+[smtp.gmail.com]:587 your_email@gmail.com:your_app_password
+
+sudo chmod 600 /etc/postfix/sasl_passwd
+sudo postmap /etc/postfix/sasl_passwd
+sudo systemctl restart postfix
+sudo systemctl status postfix
+
+--Setup db file:
+sudo postmap /etc/postfix/sasl_passwd
+ls -l /etc/postfix/sasl_passwd*
+sudo chmod 600 /etc/postfix/sasl_passwd /etc/postfix/sasl_passwd.db
+sudo systemctl restart postfix
+
+--Send a test mail:
+# Replace with the actual recipient email
+echo "This is a test email from Postfix on Ubuntu" | mail -s "Test Email" recipient@example.com
+
+--To view mail logs:
+sudo tail -f /var/log/mail.log
+
+
+
