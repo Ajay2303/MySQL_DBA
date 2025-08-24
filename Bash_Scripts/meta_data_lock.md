@@ -22,8 +22,7 @@ sends an **HTML email alert** when locks are detected, and sends a **resolved no
 
 ---
 
-## Configuration
-Update these values in the script:
+## Script
 
 ```bash
 #!/bin/bash
@@ -117,3 +116,4 @@ if [[ "$LOCK_EXISTS" -eq 0 && "$LAST_STATE" -eq 1 ]]; then
     rm -f "$QUERYFILE"
 fi
 ```
+
