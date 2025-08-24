@@ -1,4 +1,4 @@
-# MySQL Long Running Query Monitor
+# MySQL Long Running Query Alert Script
 
 This script monitors **long-running queries** in MySQL using  
 `INFORMATION_SCHEMA.PROCESSLIST`.  
@@ -180,3 +180,4 @@ fi
 # Rotate files
 mv "$CURR_QUERY_IDS_FILE" "$PREV_QUERY_IDS_FILE"
 ```
+
