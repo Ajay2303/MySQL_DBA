@@ -30,14 +30,14 @@ This script monitors the daily growth of MySQL databases and sends an HTML-forma
 # ==============================================
 
 # Directories for temp files
-BASE_DIR="/docker/dbamonitoring/db_growth"
+BASE_DIR=""
 TODAY_FILE="$BASE_DIR/db_size_today.txt"
 YESTERDAY_FILE="$BASE_DIR/db_size_yesterday.txt"
 
 # Mail
-MAIL_TO="mysqltechsupport@geopits.com,udhayanan.l@credopay.com,somasundaram.s@credopay.com,bhagyasri.m@credopay.com,customersupport1@credopay.com"
+MAIL_TO=""
 MAIL_SUBJECT="Database Size Growth Report - $(date +%Y-%m-%d)"
-MAIL_FROM="CredoPay MySQL <mysqlalert1@gmail.com>"
+MAIL_FROM=""
 
 mkdir -p "$BASE_DIR"
 
