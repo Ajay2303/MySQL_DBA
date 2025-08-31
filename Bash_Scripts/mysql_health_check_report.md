@@ -33,11 +33,11 @@ This script generates a **comprehensive HTML health report** for a MySQL server,
 # MySQL Health Check Report Script
 # ================================
 
-CLIENT_NAME="CredoPay MySQL"
+CLIENT_NAME=""
 DATE=$(date +"%Y-%m-%d %H:%M:%S")
 
 # Mail settings
-MAIL_TO="mysqltechsupport@geopits.com,udhayanan.l@credopay.com,somasundaram.s@credopay.com,bhagyasri.m@credopay.com,customersupport1@credopay.com"
+MAIL_TO=""
 MAIL_SUBJECT="MySQL Health Report - $DATE"
 
 # MySQL command (credentials from ~/.my.cnf)
@@ -176,4 +176,5 @@ $(echo "$TOP5_DB" | awk '{print "<tr><td>"$1"</td><td>"$2"</td></tr>"}')
 </html>
 EOF
 } | /usr/sbin/sendmail -t
+
 ```
