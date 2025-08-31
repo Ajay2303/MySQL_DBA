@@ -1,10 +1,10 @@
-# 📊 MySQL Database Growth Monitoring Script
+# MySQL Database Growth Monitoring Script
 
 This script monitors the daily growth of MySQL databases and sends an HTML-formatted email report highlighting the size differences between **today** and **yesterday**.  
 
 ---
 
-## 🚀 Features
+## Features
 - Collects database sizes in **GB** from `information_schema.tables`.
 - Compares today’s size with yesterday’s size.
 - Highlights **growth values** with colors:
@@ -16,11 +16,11 @@ This script monitors the daily growth of MySQL databases and sends an HTML-forma
 
 ---
 
-## 📂 Files Used
+## Files Used
 - `db_size_today.txt` → Stores current day’s DB sizes.  
 - `db_size_yesterday.txt` → Stores previous day’s DB sizes.  
 
-## 📝 Script
+## Script
 
 ```bash
 #!/bin/bash
