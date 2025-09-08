@@ -207,16 +207,16 @@ Expect:
 On **S1**:
 
 ```sql
-CREATE DATABASE repl_test;
-USE repl_test;
-CREATE TABLE t1(id INT PRIMARY KEY, note VARCHAR(100));
-INSERT INTO t1 VALUES (1,'test replication');
+CREATE DATABASE db_1;
+USE db_1;
+CREATE TABLE table_1(Id INT PRIMARY KEY);
+INSERT INTO table_1 VALUES (1);
 ```
 
 On **S2** and **S3**:
 
 ```sql
-SELECT * FROM repl_test.t1;
+SELECT * FROM db_1.table_1;
 ```
 
 You should see the inserted row on both S2 and S3.
