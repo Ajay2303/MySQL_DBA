@@ -102,7 +102,7 @@ Create a dedicated replication user on each master for the next server.
 ### On S1 (allow S2)
 
 ```sql
-CREATE USER 'replica_user'@'S2_IP' IDENTIFIED BY 'strong_password';
+CREATE USER 'replica_user'@'S2_IP' IDENTIFIED WITH mysql_native_password BY 'strong_password';
 GRANT REPLICATION SLAVE ON *.* TO 'replica_user'@'S2_IP';
 FLUSH PRIVILEGES;
 ```
@@ -110,7 +110,7 @@ FLUSH PRIVILEGES;
 ### On S2 (allow S3)
 
 ```sql
-CREATE USER 'replica_user'@'S3_IP' IDENTIFIED BY 'strong_password';
+CREATE USER 'replica_user'@'S3_IP' IDENTIFIED WITH mysql_native_password BY 'strong_password';
 GRANT REPLICATION SLAVE ON *.* TO 'replica_user'@'S3_IP';
 FLUSH PRIVILEGES;
 ```
