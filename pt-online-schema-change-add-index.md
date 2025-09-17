@@ -24,7 +24,7 @@ pt-online-schema-change \
   --progress=time,30 \
   --print \
   --execute \
-  D=database_name,t=tablename
+  D=database_name,t=table_name
 ```
 ### 🔹 Actual Run Command
 ```bash
