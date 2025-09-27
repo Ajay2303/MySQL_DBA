@@ -44,5 +44,7 @@ LIMIT 10;
 --Data Free Pct shows the percentage of free space relative to total table size.
 ```
 ## Notes:
-### --Run these queries before and after defragmentation to verify reclaimed space.
-### --Regular monitoring of fragmentation helps maintain database performance.
+```
+--Run these queries before and after defragmentation to verify reclaimed space.
+--Regular monitoring of fragmentation helps maintain database performance.
+```
