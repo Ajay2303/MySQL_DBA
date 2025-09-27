@@ -15,9 +15,11 @@ ENGINE=InnoDB,
 ALGORITHM=INPLACE, 
 LOCK=NONE;
 ```
--- <database_name> → Name of the database
--- <table_name> → Name of the table to defragment
--- LOCK=NONE allows table to remain available during operation.
+<database_name> → Name of the database
+
+<table_name> → Name of the table to defragment
+
+LOCK=NONE → Allows the table to remain available during the operation
 
 ## 2. Optimize Table
 ```
