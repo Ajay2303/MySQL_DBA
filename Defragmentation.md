@@ -14,23 +14,26 @@ ALTER TABLE <database_name>.<table_name>
 ENGINE=InnoDB, 
 ALGORITHM=INPLACE, 
 LOCK=NONE;
+
+-- Rebuilds the table to reclaim unused space (defragmentation).
+-- Uses in-place operation (ALGORITHM=INPLACE) to avoid full table copy.
+-- LOCK=NONE allows table to remain available during operation.
 ```
-<database_name> → Name of the database
-
-<table_name> → Name of the table to defragment
-
-LOCK=NONE → Allows the table to remain available during the operation
 
 ## 2. Optimize Table
 ```
 OPTIMIZE TABLE <database_name>.<table_name>;
-```
+
 -- Reclaims unused disk space.
 -- Performs internal rebuild for InnoDB tables.
+```
 ## 3. Analyze Table
 ```
 ANALYZE TABLE <database_name>.<table_name>;
-```
+
 -- Updates table and index statistics.
 -- Helps the query optimizer make efficient decisions.
-
+```
+## Note:
+-- <database_name> → Name of the database
+-- <table_name> → Name of the table to defragment
