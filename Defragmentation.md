@@ -34,6 +34,3 @@ ANALYZE TABLE <database_name>.<table_name>;
 -- Updates table and index statistics.
 -- Helps the query optimizer make efficient decisions.
 ```
-## Note:
--- <database_name> → Name of the database
--- <table_name> → Name of the table to defragment
