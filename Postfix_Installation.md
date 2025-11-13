@@ -17,12 +17,14 @@ sudo nano /etc/postfix/main.cf
 
 Add or update the following settings:
 relayhost = [smtp.gmail.com]:587
+smtp_use_tls = yes
 smtp_sasl_auth_enable = yes
 smtp_sasl_security_options = noanonymous
 smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd
-smtp_tls_security_level = encrypt
 smtp_tls_CAfile = /etc/ssl/certs/ca-certificates.crt
+smtp_tls_security_level = encrypt
 inet_protocols = ipv4
+
 
 Note: Ensure there is only one definition for each setting.
 
@@ -49,3 +51,4 @@ echo "This is a test email from Postfix on Ubuntu" | mail -s "Test Email" recipi
 
 7. To check Logs
 sudo tail -f /var/log/mail.log
+
