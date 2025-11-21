@@ -191,10 +191,10 @@ echo "$CURRENT_UPTIME" > "$STATUS_FILE"
 ---
 
 ### 📅 Recommended Cron  
-Run every 5 minutes:
+Run every minute:
 
 ```bash
-*/5 * * * * /bin/bash /opt/restart_alert/restart_alert.sh
+* * * * * /bin/bash /opt/server_restart.sh
 ```
 
 ---
