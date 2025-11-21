@@ -168,10 +168,6 @@ echo "$CURRENT_UPTIME" > "$STATUS_FILE"
 
 ---
 
-## =============================
-## README (Included in same snippet)
-## =============================
-
 ### 📌 How It Detects a Restart  
 1. Gets uptime using:  
    ```sql
