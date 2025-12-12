@@ -23,25 +23,24 @@ WHERE table_schema = '<database_name>'
 ```
 ## 2. Check Top 10 Tables by Fragmentation in a Database
 ```
-SELECT 
-    CONCAT(table_schema, '.', table_name) AS 'Table',
-    CONCAT(ROUND((data_length + index_length) / (1024 * 1024 * 1024), 3), 'G') AS 'Table Size',
-    CONCAT(ROUND((data_free / 1024 / 1024 / 1024), 2), 'GB') AS 'Data Free',
+SELECT
+    CONCAT(table_schema, '.', table_name) AS `Table`,
+    CONCAT(ROUND((data_length + index_length) / (1024 * 1024 * 1024), 3), 'G') AS `Table Size`,
+    CONCAT(ROUND((data_free / 1024 / 1024 / 1024), 2), 'GB') AS `Data Free`,
     CONCAT(
         '(',
-        IF(data_free < (data_length + index_length), 
-           CONCAT(ROUND(data_free / (data_length + index_length) * 100, 2), '%'),
-           '100%'
+        IF(
+            data_free < (data_length + index_length),
+            CONCAT(ROUND(data_free / (data_length + index_length) * 100, 2), '%'),
+            '100%'
         ),
         ')'
-    ) AS 'Data Free Pct'
+    ) AS `Data Free Pct`
 FROM information_schema.TABLES
-WHERE table_schema = '<database_name>'
-ORDER BY ROUND(data_free / 1024 / 1024 / 1024, 2) DESC
+WHERE table_schema = 'flow_api'
+ORDER BY data_free DESC
 LIMIT 10;
 
---Replace <database_name> with your target database.
---Data Free Pct shows the percentage of free space relative to total table size.
 ```
 ## Notes:
 ```
