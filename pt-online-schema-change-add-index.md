@@ -22,8 +22,7 @@ pt-online-schema-change \
   --user=username \
   --ask-pass \
   --progress=time,30 \
-  --print \
-  --execute \
+  --dry-run \
   D=database_name,t=table_name
 ```
 ### 🔹 Actual Run Command
