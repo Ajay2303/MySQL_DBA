@@ -37,7 +37,7 @@ SELECT
         ')'
     ) AS `Data Free Pct`
 FROM information_schema.TABLES
-WHERE table_schema = 'flow_api'
+WHERE table_schema = ''
 ORDER BY data_free DESC
 LIMIT 10;
 
