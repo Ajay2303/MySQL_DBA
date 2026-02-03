@@ -15,7 +15,8 @@ SELECT
 FROM information_schema.tables
 WHERE table_schema = '<database_name>'
   AND table_name IN ('<table_name_1>', '<table_name_2>');
-  
+  ```
+  ```
 --Replace <database_name> with the database name.
 --Replace <table_name_1>, <table_name_2> with the table(s) to check.
 --data_length + index_length gives total table size (data + indexes).
