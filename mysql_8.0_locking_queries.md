@@ -1,6 +1,6 @@
 # MySQL 8.0+ Locking Detection Queries (Performance Schema)
 
-<p align="right">Author: Ajay</p>
+<p align="center">Author: Ajay S</p>
 
 ---
 
