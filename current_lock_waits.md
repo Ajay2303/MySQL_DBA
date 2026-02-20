@@ -1,4 +1,4 @@
--- QUERY 1: CURRENT LOCK WAITS (MySQL 8.0+)
+-- CURRENT LOCK WAITS (MySQL 8.0+)
 -- Shows which queries are blocking others RIGHT NOW
 
 ```
