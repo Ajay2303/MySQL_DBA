@@ -36,9 +36,8 @@ WHERE log_in_time <= '<cutoff date> 23:59:59';
 ### Step 1: Create the Archive Table
 
 ```sql
-CREATE TABLE archivedb.login_audit_detail_archive AS
-SELECT *
-FROM portal.login_audit_detail;
+CREATE TABLE archivedb.login_audit_detail_archive
+LIKE portal.login_audit_detail;
 ```
 
 ### Step 2: Export Data to the Archive Database
